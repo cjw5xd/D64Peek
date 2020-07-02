@@ -1,9 +1,9 @@
-D64Peek prints the contents of a Commodore 64 disk image (more commonly known
+D64Peek prints the contents of a Commodore 1541 disk image (more commonly known
 as a D64 file) to the standard output. It works for both 35- and 40-track disks
 with or without appended error bits.
 
-Sector data is also displayed in PETSCII form, allowing easy inspection of a
-program or data file's text contents.
+Sector data is also displayed in PETSCII form, allowing for easy inspection of
+a program or data file's text contents.
 
 Sample output using the default options:
 
@@ -61,6 +61,7 @@ Sample output using the default options:
 
 
 COMMAND LINE OPTIONS
+--------------------
 
 -h    Show the help information and exit.
 
@@ -71,6 +72,7 @@ COMMAND LINE OPTIONS
 
 
 COMPILATION
+-----------
 
 On most Linux systems, simply running
 
