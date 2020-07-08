@@ -38,8 +38,7 @@ void die(const char * const message)
 /*
 Copy the next sector from the D64 file into the byte array.
 */
-BYTE * read(BYTE * const data,
-            FILE * const file)
+BYTE * read(BYTE * const data, FILE * const file)
 {
     for(size_t i = 0; i < 256; i++) {
         data[i] = getc(file);
@@ -53,9 +52,7 @@ BYTE * read(BYTE * const data,
 Given the sector index, assign the track and sector numbers with the
 corresponding values for the T/S pair.
 */
-void tsp(const size_t index,
-         size_t * const track,
-         size_t * const sector)
+void tsp(const size_t index, size_t * const track, size_t * const sector)
 {
     if(index < 357) {
         *track = index / 21 + 1;
@@ -79,10 +76,8 @@ void tsp(const size_t index,
 /*
 Print the sector data to the standard output.
 */
-void dump(const BYTE * const data,
-          const size_t track,
-          const size_t sector,
-          int * const first)
+void dump(const BYTE * const data, const size_t track, const size_t sector,
+  int * const first)
 {
     const char * SECTOR_FMT = opt_hex_ts ? "S=%02X   " : "S=%02d   ";
     const char * TRACK_FMT = opt_hex_ts ? "T=%02X   " : "T=%02d   ";
@@ -129,8 +124,7 @@ void dump(const BYTE * const data,
 /*
 Set options based on command line arguments.
 */
-void setopts(const int argc,
-             char ** const argv)
+void setopts(const int argc, char ** const argv)
 {
     for(size_t i = 0; i < argc; i++) {
         if(strcmp(argv[i], "-h") == 0) {
@@ -149,9 +143,7 @@ void setopts(const int argc,
 /*
 Main function.
 */
-int main(int argc,
-         char ** argv,
-         char ** envp)
+int main(int argc, char ** argv, char ** envp)
 {
     FILE * file = NULL;
     int first = TRUE;
