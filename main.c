@@ -25,7 +25,7 @@ int opt_show_help = FALSE;
 
 
 /*
-Print the given message and exit with execution failure status.
+Print the message and exit with execution failure status.
 */
 void die(const char * const message)
 {
